@@ -21,7 +21,8 @@ with employee_hierarchy as (
 	inner join employee_hierarchy eh on e.manager_id = eh.emp_id
 	where NOT e.emp_id = ANY(eh.path)
 )
-	select emp_id, name, level, path
+select emp_id, name, level, path
 from employee_hierarchy
 order by path
+
 
